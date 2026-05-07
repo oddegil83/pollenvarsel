@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pollenvarsel · Lillestrøm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <span class="logo-icon">🌿</span>
+        <div>
+          <span class="logo-title">Pollenvarsel</span>
+          <span class="logo-location">Lillestrøm</span>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span id="js-date" class="header-date"></span>
+        <span id="js-updated" class="header-updated"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <!-- LOADING STATE -->
+    <div id="js-loading" class="loading-state">
+      <div class="spinner"></div>
+      <p>Henter pollendata…</p>
+    </div>
+
+    <!-- ERROR STATE -->
+    <div id="js-error" class="error-state" hidden>
+      <span class="error-icon">⚠️</span>
+      <p id="js-error-msg">Kunne ikke hente pollendata.</p>
+    </div>
+
+    <!-- CONTENT -->
+    <div id="js-content" hidden>
+
+      <!-- OVERALL STATUS CARD -->
+      <section id="js-overall-card" class="overall-card">
+        <div class="overall-left">
+          <p class="overall-label">Samlet pollenvarsel</p>
+          <h1 id="js-overall-level" class="overall-level">—</h1>
+          <p id="js-overall-dominant" class="overall-dominant"></p>
+        </div>
+        <div class="overall-right">
+          <div id="js-overall-icon" class="overall-badge">
+            <span id="js-overall-emoji" class="badge-emoji">🌿</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADVICE BANNER -->
+      <div id="js-advice" class="advice-banner"></div>
+
+      <!-- POLLEN GRID -->
+      <section class="section">
+        <h2 class="section-title">Pollentyper i dag</h2>
+        <div id="js-pollen-grid" class="pollen-grid"></div>
+      </section>
+
+      <!-- LEGEND -->
+      <section class="section">
+        <h2 class="section-title">Nivåforklaring</h2>
+        <div class="legend-grid" id="js-legend"></div>
+      </section>
+
+      <!-- TIPS -->
+      <section class="section tips-section">
+        <h2 class="section-title">Råd for allergikere</h2>
+        <ul class="tips-list" id="js-tips"></ul>
+      </section>
+
+      <!-- SOURCE -->
+      <p id="js-source-note" class="source-note"></p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Pollenvarsel for Lillestrøm &middot; Data basert på <a href="https://www.naaf.no/pollenvarsel" target="_blank" rel="noopener">NAAF</a> og <a href="https://www.yr.no" target="_blank" rel="noopener">Yr.no</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
